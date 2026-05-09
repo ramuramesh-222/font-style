@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'ArialCustom';
+  src: url('./fonts/arial.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'CalibriCustom';
+  src: url('./fonts/calibri.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'CambriaCustom';
+  src: url('./fonts/cambria.ttc') format('truetype');
+}

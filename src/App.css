@@ -1,38 +1,228 @@
-.App {
+.app {
   text-align: center;
+  padding-top: 60px;
+  color: white;
+  background: radial-gradient(circle at top, #1a1a1a, #000);
+  min-height: calc(100vh - 18px);
+
+  /* ✅ prevent horizontal scroll */
+  overflow-x: hidden;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Input */
+.input-box {
+  padding: 12px;
+  font-size: 18px;
+  width: 320px;
+  max-width: 100%; /* ✅ responsive */
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin: 15px;
+  background: #111;
+  color: white;
+  border: 1px solid #333;
+  box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Button */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #36d1dc, #5b86e5);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+/* Preview text */
+h2 {
+  margin-top: 30px;
+  font-size: 2rem;
+}
+
+.selected-fonts {
+  margin-top: 30px;
+}
+
+.selected-fonts p {
+  font-size: 20px;
+  margin: 8px 0;
+}
+
+/* Grid layout */
+.selected-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+/* Card */
+.selected-card {
+  background: linear-gradient(145deg, #1a1a1a, #111);
+  border: 1px solid #2a2a2a;
+  padding: 15px;
+  border-radius: 12px;
+  position: relative;
+  text-align: center;
+  transition: 0.3s;
+
+  /* ✅ avoid overflow */
+  overflow: hidden;
+}
+
+.selected-card:hover {
+  transform: translateY(-4px);
+  border-color: #555;
+}
+
+/* Preview text */
+.selected-preview {
+  font-size: 2.8rem !important;
+  margin-bottom: 10px;
+
+  /* ✅ text responsive */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Font name */
+.selected-name {
+  font-size: 0.9rem !important;
+  color: #aaa;
+  font-family: sans-serif;
+
+  /* ✅ long font names */
+  word-break: break-word;
+}
+
+.remove-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  width: auto !important;   /* ✅ fix */
+  min-width: 28px;
+
+  background: #ff4b2b;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  font-size: 12px;
+  padding: 4px 7px;
+  cursor: pointer;
+
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+  line-height: 1;
 }
 
-.App-link {
-  color: #61dafb;
+.remove-btn:hover {
+  background: #ff2e00;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* .remove-btn:hover {
+  background: #ff2e00;
+} */
+
+/* ================================================= */
+/* ✅ MOBILE RESPONSIVE ONLY */
+/* Desktop UI NOT changed */
+/* ================================================= */
+
+@media (max-width: 768px) {
+
+  .app {
+    padding-top: 40px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .app h1 {
+    font-size: 2rem;
+  }
+
+  .input-box {
+    width: 100%;
+    margin: 10px 0;
+    font-size: 16px;
+  }
+
+  button:not(.remove-btn) {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 10px;
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .selected-grid {
+    grid-template-columns: 1fr; /* ✅ single column mobile */
+    gap: 12px;
+    padding: 0;
+  }
+
+  .selected-card {
+    padding: 14px;
+  }
+
+  .selected-preview {
+    font-size: 2rem !important;
+  }
+
+  .selected-name {
+    font-size: 0.8rem !important;
+  }
+
+  .remove-btn {
+    font-size: 11px;
+    padding: 3px 5px;
+  }
+}
+
+/* ✅ Extra small devices */
+
+@media (max-width: 480px) {
+
+  .app h1 {
+    font-size: 1.7rem;
+  }
+
+  .input-box {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .selected-preview {
+    font-size: 1.6rem !important;
+  }
+
+  .selected-name {
+    font-size: 0.7rem !important;
+  }
+
+  button {
+    font-size: 14px;
   }
 }
